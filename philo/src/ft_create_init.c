@@ -6,7 +6,7 @@
 /*   By: graiolo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 19:49:55 by graiolo           #+#    #+#             */
-/*   Updated: 2023/03/30 19:21:20 by graiolo          ###   ########.fr       */
+/*   Updated: 2023/03/31 12:38:23 by graiolo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	ft_allocate_table(t_container *container)
 	if (container->table == NULL)
 		ft_message_error(MALL_ERR, container);
 	container->table->fork = NULL;
-
 }
 
 void	ft_allocate_philo(t_container *container)

@@ -6,7 +6,7 @@
 /*   By: graiolo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 15:15:07 by graiolo           #+#    #+#             */
-/*   Updated: 2023/03/30 19:07:00 by graiolo          ###   ########.fr       */
+/*   Updated: 2023/03/31 12:38:44 by graiolo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void			ft_bigbrother(t_container *container);
 void			ft_solo(t_container *container);
 void			*ft_solo_routine(void *elem);
 //-------------------------------------------------------------------//
-int             ft_patoi(char *arg, t_container *container);
+int				ft_patoi(char *arg, t_container *container);
 int				ft_atoi(const char *nptr);
 int				ft_strcmp(const char *s1, const char *s2);
 

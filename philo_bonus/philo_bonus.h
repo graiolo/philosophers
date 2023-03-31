@@ -6,7 +6,7 @@
 /*   By: graiolo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 00:32:41 by graiolo           #+#    #+#             */
-/*   Updated: 2023/03/31 12:15:00 by graiolo          ###   ########.fr       */
+/*   Updated: 2023/03/31 12:36:34 by graiolo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void		ft_message_error(char *str, t_container *conteiner);
 void		ft_routine(t_philo *philo);
 void		ft_eat(t_philo *philo);
 //-------------------------------------------------------------------//
-int         ft_patoi(char *arg, t_container *container);
+int			ft_patoi(char *arg, t_container *container);
 int			ft_atoi(const char *nptr);
 int			ft_strcmp(const char *s1, const char *s2);
 
