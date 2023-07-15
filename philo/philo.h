@@ -6,7 +6,7 @@
 /*   By: graiolo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 15:15:07 by graiolo           #+#    #+#             */
-/*   Updated: 2023/03/31 12:38:44 by graiolo          ###   ########.fr       */
+/*   Updated: 2023/07/16 01:33:53 by graiolo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ typedef struct s_philo
 	pthread_t			*philo;
 	pthread_mutex_t		*l_fork;
 	pthread_mutex_t		*r_fork;
-	pthread_mutex_t		looc;
 	t_table				*table;
 }	t_philo;
 
@@ -56,6 +55,7 @@ typedef struct s_table
 	size_t			t_sleep;
 	useconds_t		t_start;
 	bool			dead;
+	pthread_mutex_t	looc;
 	pthread_mutex_t	print;
 	pthread_mutex_t	*fork;
 }	t_table;

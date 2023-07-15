@@ -6,7 +6,7 @@
 /*   By: graiolo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 19:52:15 by graiolo           #+#    #+#             */
-/*   Updated: 2023/03/30 18:27:30 by graiolo          ###   ########.fr       */
+/*   Updated: 2023/07/16 01:31:03 by graiolo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,17 @@ void	ft_message(char *str, t_philo *philos)
 {
 	static bool	dead;
 
+	pthread_mutex_lock(&philos->table->looc);
 	pthread_mutex_lock(&philos->table->print);
 	if (dead == false && ft_get_time() - philos->last_meal
 		> philos->table->t_die)
 	{
 		dead = true;
+		pthread_mutex_unlock(&philos->table->looc);
 		pthread_mutex_unlock(&philos->table->print);
 		ft_message(DIED, philos);
+		pthread_mutex_lock(&philos->table->looc);
+		pthread_mutex_lock(&philos->table->print);
 	}
 	if (philos->table->dead == false)
 	{
@@ -31,6 +35,7 @@ void	ft_message(char *str, t_philo *philos)
 		if (ft_strcmp(str, DIED) == 0)
 			philos->table->dead = true;
 	}
+	pthread_mutex_unlock(&philos->table->looc);
 	pthread_mutex_unlock(&philos->table->print);
 }
 

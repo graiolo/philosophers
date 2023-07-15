@@ -6,7 +6,7 @@
 /*   By: graiolo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 19:49:55 by graiolo           #+#    #+#             */
-/*   Updated: 2023/03/31 12:38:23 by graiolo          ###   ########.fr       */
+/*   Updated: 2023/07/16 01:17:30 by graiolo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ void	ft_init_table(t_container *container, char **argv, int argc)
 		ft_message_error(MALL_ERR, container);
 	if (pthread_mutex_init(&table->print, NULL) != 0)
 		ft_message_error(MTX_ERR, container);
+	if (pthread_mutex_init(&table->looc, NULL) != 0)
+		ft_message_error(MTX_ERR, container);
 }
 
 void	ft_init_philo(t_container *container)
@@ -91,9 +93,7 @@ void	ft_init_fork(t_container *container)
 	{
 		if (pthread_mutex_init(&table->fork[id], NULL) != 0)
 			ft_message_error(MTX_ERR, container);
-		if (pthread_mutex_init(&philos[id].looc, NULL) != 0)
-			ft_message_error(MTX_ERR, container);
-		if (id % 2 != 0)
+		if (id % 2 == 0)
 		{
 			philos[id].r_fork = &table->fork[id];
 			philos[id].l_fork = &table->fork[(id + 1) % table->n_philo];
