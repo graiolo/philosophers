@@ -6,7 +6,7 @@
 /*   By: graiolo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 19:49:55 by graiolo           #+#    #+#             */
-/*   Updated: 2023/03/30 19:28:31 by graiolo          ###   ########.fr       */
+/*   Updated: 2023/07/16 02:32:02 by graiolo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,10 @@ void	ft_init_sem(t_container *container)
 	sem_unlink("print");
 	sem_unlink("forks");
 	sem_unlink("stop");
+	sem_unlink("looc");
 	sem_unlink("end");
 	container->table->print = sem_open("print", O_CREAT, 0600, 1);
+	container->table->looc = sem_open("looc", O_CREAT, 0600, 1);
 	container->table->end = sem_open("end", O_CREAT, 0600, 1);
 	container->table->stop = sem_open("stop", O_CREAT, 0600, 1);
 	container->table->fork = sem_open("forks", O_CREAT, 0600,

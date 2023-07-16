@@ -6,7 +6,7 @@
 /*   By: graiolo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 00:32:41 by graiolo           #+#    #+#             */
-/*   Updated: 2023/03/31 12:36:34 by graiolo          ###   ########.fr       */
+/*   Updated: 2023/07/16 02:31:15 by graiolo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ typedef struct s_table
 	size_t		t_sleep;
 	sem_t		*fork;
 	sem_t		*print;
+    sem_t       *looc;
 	sem_t		*stop;
 	sem_t		*end;
 }	t_table;
